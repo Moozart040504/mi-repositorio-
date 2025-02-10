@@ -3,104 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz 14 de Febrero 💖</title>
+    <title>San Valentín</title>
     <style>
         body {
-            background-color: #ffdde1;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: radial-gradient(circle at 50%, #2e003e, #000000);
+            overflow: hidden;
+            color: white;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
-            color: #d63384;
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveaspectratio="xMidYMid slice"%3E%3Ccircle cx="1" cy="1" r="1" fill="%23fff"%3E%3C/circle%3E%3C/svg%3E') repeat;
+            pointer-events: none;
+            z-index: -1;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 80px;
+            letter-spacing: 2px;
+            margin-top: 100px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.8);
+            animation: neon 1.5s ease-in-out infinite alternate;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 24px;
+            margin: 20px;
+            animation: fade 3s ease-in-out infinite alternate;
         }
 
-        .heart {
-            color: red;
-            font-size: 2em;
-            animation: heartbeat 1s infinite alternate;
+        @keyframes neon {
+            0% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.8); }
+            100% { text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 182, 193, 0.8), 0 0 30px rgba(255, 182, 193, 0.8), 0 0 40px rgba(255, 182, 193, 0.8); }
         }
 
-        @keyframes heartbeat {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
+        @keyframes fade {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
         }
-        @media (max-width: 768px) {
-  /* Estilos para móviles */
-}
 
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
+        .btn {
             padding: 10px 20px;
-            background-color: #ff4081;
-            color: white;
-            font-size: 1.2em;
+            font-size: 20px;
+            background-color: rgba(255, 105, 180, 0.8);
+            border: none;
             border-radius: 10px;
+            cursor: pointer;
+            color: white;
             text-decoration: none;
-            transition: 0.3s;
+            margin-top: 30px;
         }
 
-        .button:hover {
-            background-color: #d63384;
-        }
-
-        .container {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Animación de corazones flotantes */
-        @keyframes float {
-            from { transform: translateY(0); opacity: 1; }
-            to { transform: translateY(-100px); opacity: 0; }
-        }
-
-        .floating-heart {
-            position: absolute;
-            color: red;
-            font-size: 1.5em;
-            animation: float 2s infinite;
+        .btn:hover {
+            background-color: rgba(255, 182, 193, 0.8);
         }
     </style>
 </head>
 <body>
-
-    <h1>💖 Feliz 14 de Febrero 💖</h1>
-    <p>Que este día esté lleno de amor y felicidad. 💕</p>
-    <p class="heart">❤️ 💘 💞</p>
-
-    <a href="https://www.youtube.com/watch?v=3JWTaaS7LdU" class="button" target="_blank">Un regalo especial 🎶</a>
-
-    <script>
-        // Función para agregar corazones flotantes
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.innerHTML = "❤️";
-            heart.classList.add("floating-heart");
-
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-
-            heart.style.left = `${x}px`;
-            heart.style.top = `${y}px`;
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 2000);
-        }
-
-        setInterval(createHeart, 500);
-    </script>
-
+    <div class="stars"></div>
+    <h1>Te quiero mucho</h1>
+    <p>Con todo mi corazón</p>
+    <a href="dos.html" class="btn">Ir a la siguiente página</a>
 </body>
 </html>

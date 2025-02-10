@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magia de Tinker Bell</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .silueta {
+            width: 200px;
+            height: 300px;
+            background: white;
+            mask-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3b/Tinkerbell.svg');
+            -webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3b/Tinkerbell.svg');
+            background-size: cover;
+        }
+        .luciérnaga {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 10px yellow;
+            animation: mover 5s infinite alternate ease-in-out;
+        }
+        @keyframes mover {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0.5; }
+        }
+        .contenido {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="silueta"></div>
+    <div class="contenido">Bienvenido al mundo mágico de Tinker Bell</div>
+    <script>
+        function crearLuciérnaga(xMin, xMax) {
+            let luciérnaga = document.createElement("div");
+            luciérnaga.classList.add("luciérnaga");
+            document.body.appendChild(luciérnaga);
+            
+            let x = Math.random() * (xMax - xMin) + xMin;
+            let y = Math.random() * window.innerHeight;
+            
+            luciérnaga.style.left = `${x}px`;
+            luciérnaga.style.top = `${y}px`;
+        }
+        
+        for (let i = 0; i < 10; i++) {
+            crearLuciérnaga(50, window.innerWidth / 3);
+            crearLuciérnaga(window.innerWidth / 3, 2 * window.innerWidth / 3);
+            crearLuciérnaga(2 * window.innerWidth / 3, window.innerWidth - 50);
+        }
+    </script>
+</body>
+</html>

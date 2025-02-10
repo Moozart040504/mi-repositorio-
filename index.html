@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 14 de Febrero 💖</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #d63384;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .heart {
+            color: red;
+            font-size: 2em;
+            animation: heartbeat 1s infinite alternate;
+        }
+
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        @media (max-width: 768px) {
+  /* Estilos para móviles */
+}
+
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d63384;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Animación de corazones flotantes */
+        @keyframes float {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-100px); opacity: 0; }
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: red;
+            font-size: 1.5em;
+            animation: float 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💖 Feliz 14 de Febrero 💖</h1>
+    <p>Que este día esté lleno de amor y felicidad. 💕</p>
+    <p class="heart">❤️ 💘 💞</p>
+
+    <a href="https://www.youtube.com/watch?v=3JWTaaS7LdU" class="button" target="_blank">Un regalo especial 🎶</a>
+
+    <script>
+        // Función para agregar corazones flotantes
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("floating-heart");
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
